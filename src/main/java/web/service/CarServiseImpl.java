@@ -16,18 +16,11 @@ public class CarServiseImpl implements CarService{
 
 
     @Override
-    public List<Car> listCarsService() {
-        List<Car> car =
-                carsDAO.listCars();
-        return car;
-    }
-
-    @Override
     public List<Car> countsCarsIdService(Integer count) {
         if (count == null || count >= 5) {
             return  carsDAO.listCars();
-        } else {
-        }return  carsDAO.countsCarsId(count);
+        }
+        return  carsDAO.countsCarsId(count);
     }
 
 }

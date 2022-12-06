@@ -12,11 +12,10 @@ import java.util.stream.Collectors;
 @Component
 public class CarsDAOImpl implements CarsDAO {
 
-    private static long CARS_COUNTS = 0L;
-    private List<Car> listCars;
+    private final List<Car> listCars;
 
     {
-        CARS_COUNTS = 0L;
+        long CARS_COUNTS = 0L;
         listCars = new ArrayList<>();
         listCars.add(new Car(++CARS_COUNTS, "CHEVROLET", "CORVETTE ", 1991));
         listCars.add(new Car(++CARS_COUNTS, "AUDI", "Q8", 1992));
