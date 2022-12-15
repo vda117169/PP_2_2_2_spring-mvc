@@ -9,13 +9,13 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
-@Transactional
+@Transactional(readOnly = true)
 public class UserDAOImpl implements UserDAO{
     @PersistenceContext //(unitName = "User")
     private EntityManager entityManager;
 
     @Override
-    @SuppressWarnings("uncheced")//Если бы я не анонсировал @SuppressWarnings ( "unchecked" ) здесь, у него возникла бы проблема с линией, где я хочу вернуть свой ResultList.
+    @SuppressWarnings("uncheced")//Если бы я не анонсировала @SuppressWarnings ( "unchecked" ) здесь, у него возникла бы проблема с линией, где я хочу вернуть свой ResultList.
     public List<User> allUser() {
         return entityManager.createQuery("select g from User g",User.class).getResultList();
     }
