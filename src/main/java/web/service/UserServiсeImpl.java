@@ -24,19 +24,19 @@ public class UserServiсeImpl implements UserService {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public void addUser(User user) {
         userDAO.addUser(user);
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public void deleteUser(User user) {
         userDAO.deleteUser(user);
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public void updateUser(User user) {
         userDAO.updateUser(user);
     }

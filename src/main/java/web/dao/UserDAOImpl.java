@@ -9,7 +9,6 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
-@Transactional(readOnly = true)
 public class UserDAOImpl implements UserDAO{
     @PersistenceContext //(unitName = "User")
     private EntityManager entityManager;
